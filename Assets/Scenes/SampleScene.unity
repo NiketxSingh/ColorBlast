@@ -1666,7 +1666,7 @@ MonoBehaviour:
   stonePrefab: {fileID: 4940974512996428766, guid: adb10b7c4f69fbe43a7f6929b9f6a5be,
     type: 3}
   throwPoint: {fileID: 1010098257}
-  forceMultiplier: 0.005
+  forceMultiplier: 0.03
 --- !u!1 &1010098256
 GameObject:
   m_ObjectHideFlags: 0
