@@ -1,0 +1,65 @@
+# ========== Unity Standard ==========
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+ExportedObj/
+sysinfo.txt
+
+# ========== Unity Burst & LFS Problems ==========
+**/PackageCache/com.unity.burst@*/.Runtime/
+**/com.unity.burst@*/.Runtime/
+**/*.dll
+**/*.dylib
+**/*.so
+
+# ========== Unity Visual Scripting ==========
+Assets/Unity.VisualScripting.Generated/
+
+# ========== StreamingAssets Addressables ==========
+Assets/StreamingAssets/aa.meta
+Assets/StreamingAssets/aa/
+
+# ========== Editor / IDE / OS ==========
+.vs/
+.gradle/
+*.sln
+*.csproj
+*.unityproj
+*.pidb
+*.user
+*.userprefs
+*.tmp
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.db
+*.log
+
+# Jetbrains Rider Plugin
+Assets/Plugins/Editor/JetBrains*
+
+# ========== Builds ==========
+*.apk
+*.aab
+*.app
+*.unitypackage
+
+# ========== Git Files ==========
+.DS_Store
+Thumbs.db
+*.bak
+*.old
+*.swp
+
+# ========== Optional ==========
+# Uncomment if you're using AssetStore tools and don't want to push them
+# Assets/AssetStoreTools*
