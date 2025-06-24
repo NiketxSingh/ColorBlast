@@ -4,7 +4,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement_m : NetworkBehaviour {
     public float moveSpeed = 12f;
     public float lookSpeed = 50f;
 
@@ -21,11 +21,16 @@ public class PlayerMovement : MonoBehaviour {
     private bool lookUp, lookDown, lookLeft, lookRight;
 
     void Start() {
+        if (!IsOwner) {
+            cameraTransform.gameObject.SetActive(false); // or disable MainCamera
+        }
+
         controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.None;
     }
 
     void Update() {
+        if (!IsOwner) return;
 
         HandleMovement();
         HandleCameraRotation();

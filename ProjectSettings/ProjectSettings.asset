@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Samsung A13
+  companyName: CBAR
   productName: ColorBlast
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -145,9 +145,11 @@ PlayerSettings:
   - {fileID: 4800000, guid: b02d09082cbc14569ae46c12d9836abc, type: 3}
   - {fileID: 4800000, guid: 0f45334fa661448c886e4f99ba812a7e, type: 3}
   - {fileID: 4800000, guid: f40a6c94c8e1b494d93d434ae522a14f, type: 3}
-  - {fileID: 4800000, guid: 6b61691ab1a21224d8806cdb2513dcd3, type: 3}
-  - {fileID: 4800000, guid: 852b53f30300ab14db82c2ba53903f2c, type: 3}
-  - {fileID: 4800000, guid: c27a53cb47424b74a8c8ce29d5f46e84, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 4800000, guid: 5bd2f684cacbeb04686105f7c2da027f, type: 3}
+  - {fileID: 4800000, guid: 312421be50356f94f9845fdb3d1cb518, type: 3}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -822,7 +824,7 @@ PlayerSettings:
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
-    Android: 0
+    Android: 1
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration: {}
   managedStrippingLevel:

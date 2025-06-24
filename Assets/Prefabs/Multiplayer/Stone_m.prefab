@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 5987639947497347088}
   - component: {fileID: 4300402159728714634}
   - component: {fileID: 4615126751450594653}
-  - component: {fileID: 6499339542484478967}
+  - component: {fileID: -7721147348942875818}
+  - component: {fileID: -4834951981934378192}
   m_Layer: 0
-  m_Name: Stone
+  m_Name: Stone_m
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +84,7 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &6499339542484478967
+--- !u!114 &-7721147348942875818
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +93,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 4940974512996428766}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a1ff98d47242994f9f0fc257bb7f6d2, type: 3}
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1293245103
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &-4834951981934378192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4940974512996428766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c5adbf41c5bc52498d95f4bbfc55da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6791391801998481698
