@@ -7,7 +7,7 @@ public class SwipeThrow : MonoBehaviour {
     private Vector2 swipeStartPos;
     private Vector2 swipeEndPos;
     private bool isSwiping = false;
-    [SerializeField] private float forceMultiplier = 0.05f;
+    [SerializeField] private float forceMultiplier = 0.005f;
 
     void Update() {
         if (Input.touchSupported && Input.touchCount > 0) {

@@ -7,7 +7,9 @@ public class MasterGrid {
     private int length;
     private int width;
     private int height;
-    bool[,,] gridArray;
+    private bool[,,] gridArray;
+
+    private const float scaleFactor = 0.1f; // Scale grid to world units
 
     public MasterGrid(int length, int width, int height) {
         this.length = length;
@@ -39,16 +41,18 @@ public class MasterGrid {
     }
 
     public Vector3 GridToWorld(int x, int y, int z) {
-        Vector3 offset = new Vector3(0f, height, 0f);
+        Vector3 offset = new Vector3(0f, height/2 * scaleFactor, 1f); 
         int centreX = length / 2;
         int centreY = height / 2;
         int centreZ = width / 2;
-        return new Vector3(x - centreX, y - centreY, z - centreZ) + offset;
+
+        Vector3 localPos = new Vector3(x - centreX, y - centreY, z - centreZ);
+        return localPos * scaleFactor + offset;
     }
 
     public Vector3Int WorldToGrid(Vector3 worldPosition) {
-        Vector3 offset = new Vector3(0f, height, 0f);
-        Vector3 adjustedPos = worldPosition - offset;
+        Vector3 offset = new Vector3(0f, height/2 * scaleFactor, 1f); 
+        Vector3 adjustedPos = (worldPosition - offset) / scaleFactor;
 
         int centreX = length / 2;
         int centreY = height / 2;
@@ -65,16 +69,7 @@ public class MasterGrid {
         return x >= 0 && y >= 0 && z >= 0 && x < length && y < height && z < width;
     }
 
-    public int GetLength() {
-        return length;
-    }
-
-    public int GetWidth() {
-        return width;
-    }
-
-    public int GetHeight() {
-        return height;
-    } 
+    public int GetLength() => length;
+    public int GetWidth() => width;
+    public int GetHeight() => height;
 }
-

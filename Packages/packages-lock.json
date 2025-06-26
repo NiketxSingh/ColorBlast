@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.merry-yellow.code-assist": {
-      "version": "file:com.merry-yellow.code-assist",
-      "depth": 0,
-      "source": "embedded",
-      "dependencies": {}
-    },
     "com.nianticlabs.lightship": {
       "version": "https://github.com/niantic-lightship/ardk-upm.git",
       "depth": 0,

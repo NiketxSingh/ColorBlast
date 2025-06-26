@@ -22,7 +22,6 @@ public class ARPlacement : MonoBehaviour {
         if (spawnedGame != null) return;
 
 #if UNITY_EDITOR
-        // Editor testing: Press mouse to place object at a fixed position
         if (Input.GetMouseButtonDown(0)) {
             Vector3 testPosition = new Vector3(0, 0, 2); // 2 meters in front of camera
             spawnedGame = Instantiate(gamePrefab, testPosition, Quaternion.identity);
@@ -34,6 +33,20 @@ public class ARPlacement : MonoBehaviour {
                 Pose hitPose = hits[0].pose;
                 spawnedGame = Instantiate(gamePrefab, hitPose.position, hitPose.rotation);
             }
+        }
+#endif
+    }
+    public void PlaceAtCenter() {
+        if (spawnedGame != null) return;
+
+#if UNITY_EDITOR
+        Vector3 testPosition = new Vector3(0, 0, 1);
+        spawnedGame = Instantiate(gamePrefab, testPosition, Quaternion.identity);
+#else
+        Vector2 screenCenter = new Vector2(Screen.width / 2f, Screen.height / 2f);
+        if (raycastManager.Raycast(screenCenter, hits, TrackableType.PlaneWithinPolygon)) {
+            Pose hitPose = hits[0].pose;
+            spawnedGame = Instantiate(gamePrefab, hitPose.position, hitPose.rotation);
         }
 #endif
     }
