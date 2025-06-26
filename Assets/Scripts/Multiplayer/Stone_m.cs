@@ -48,8 +48,8 @@ public class Stone_m : NetworkBehaviour {
 
         targetSpawner_m.DecreaseTargets();
 
-        Vector3Int gridPos = TargetSpawner_m.masterGrid.WorldToGrid(other.transform.position);
-        TargetSpawner_m.masterGrid.SwitchCellValue(gridPos.x, gridPos.y, gridPos.z);
+        Vector3Int gridPos = TargetSpawner_m.masterGrid_m.WorldToGrid(other.transform.position);
+        TargetSpawner_m.masterGrid_m.SwitchCellValue(gridPos.x, gridPos.y, gridPos.z);
 
         NetworkObject targetNetObj = other.GetComponent<NetworkObject>();
         if (targetNetObj != null) {

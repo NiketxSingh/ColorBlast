@@ -12,7 +12,7 @@ public class TargetSpawner_m : NetworkBehaviour {
     [SerializeField] private int width = 4;
     [SerializeField] private int height = 4;
 
-    public static MasterGrid masterGrid;
+    public static MasterGrid_m masterGrid_m;
 
     [SerializeField] private List<GameObject> targetPrefabs;
     [SerializeField] private int maxTargets = 10;
@@ -29,15 +29,15 @@ public class TargetSpawner_m : NetworkBehaviour {
         if (!IsServer) return;
 
         Debug.Log("TargetSpawner OnNetworkSpawn called, creating masterGrid");
-        masterGrid = new MasterGrid(length, width, height);
+        masterGrid_m = new MasterGrid_m(length, width, height);
 
         StartCoroutine(DelayedSpawn());
     }
 
     private IEnumerator DelayedSpawn() {
         yield return new WaitUntil(() =>
-            masterGrid != null &&
-            masterGrid.GetLength() > 0
+            masterGrid_m != null &&
+            masterGrid_m.GetLength() > 0
         );
 
         currentTargets = 0;
@@ -70,16 +70,16 @@ public class TargetSpawner_m : NetworkBehaviour {
         //Debug.Log("masterGrid exists");
 
         do {
-            x = Random.Range(0, masterGrid.GetLength());
-            y = Random.Range(0, masterGrid.GetWidth());
-            z = Random.Range(0, masterGrid.GetHeight());
+            x = Random.Range(0, masterGrid_m.GetLength());
+            y = Random.Range(0, masterGrid_m.GetWidth());
+            z = Random.Range(0, masterGrid_m.GetHeight());
             tries++;
             if (tries > 100) return;
         }
-        while (masterGrid.GetCellValue(x, y, z));
+        while (masterGrid_m.GetCellValue(x, y, z));
 
-        Vector3 spawnPos = masterGrid.GridToWorld(x, y, z);
-        masterGrid.SwitchCellValue(x, y, z);
+        Vector3 spawnPos = masterGrid_m.GridToWorld(x, y, z);
+        masterGrid_m.SwitchCellValue(x, y, z);
 
         GameObject prefab = targetPrefabs[Random.Range(0, targetPrefabs.Count)];
         if (prefab == null) {
